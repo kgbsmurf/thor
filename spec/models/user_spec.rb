@@ -2,18 +2,21 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  password_digest :string(255)
 #
 
 require 'spec_helper'
 
 describe User do
   
-  before { @user = User.new(name: "Example User", email: "user@example.com")}
+  before { @user = User.new(name: "Example User", email: "user@example.com", 
+                              password: "foobar21", 
+                              password_confirmation: "foobar21")}
   
   subject { @user}
   
@@ -26,6 +29,8 @@ describe User do
   
   
   it {should be_valid}
+  
+  ## Testing name
   
   describe "when name is not present" do
     before {@user.name = " "}
@@ -41,6 +46,8 @@ describe User do
     before {@user.name = "a" * 51}
     it {should_not be_valid}
   end
+  
+  ## Testing email
   
   describe "when email format is invalid" do
     it "should be invalid" do
@@ -62,4 +69,33 @@ describe User do
     
     it { should_not be_valid }
   end
+  
+  ## Testing Password
+  
+  describe "when password is not present" do
+    before {@user.password = @user.password_confirmation = " "}
+    it { should_not be_valid }
+  end
+  
+  describe "when password does not match password_confirmation" do
+    before { @user.password_confirmation = "wrongpass" }
+    it { should_not be_valid }
+  end
+  
+  describe "when password_confirmation is nil" do
+    before { @user.password_confirmation = nil }    
+    it { should_not be_valid }
+  end
+  
+  describe "should not contain only letters" do
+    before { @user.password = @user.password_confirmation = "Simplelongpassword"}
+    it { should_not be_valid }
+  end
+  
+  
+  describe "should not contain only numbers" do
+    before { @user.password = @user.password_confirmation = "123123123123"}
+    it { should_not be_valid }
+  end
+  
 end
