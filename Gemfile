@@ -49,7 +49,7 @@ group :development, :test do
   gem 'capybara', '1.1.2'
   
   # Use Uglifier as compressor for JavaScript assets
-  gem 'uglifier', '>= 1.3.0'
+  gem 'uglifier'
 end
 
 group :development do
