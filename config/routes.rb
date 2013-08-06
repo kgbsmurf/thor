@@ -1,5 +1,7 @@
 ThorPlatform::Application.routes.draw do
-  get "users/new"
+  
+  resources :users
+    
   root 'static_pages#home'
   get '/help',    to: 'static_pages#help'
   get '/signup',  to: 'users#new'
