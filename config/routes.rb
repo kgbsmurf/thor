@@ -1,10 +1,13 @@
 ThorPlatform::Application.routes.draw do
   
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
     
   root 'static_pages#home'
   get '/help',    to: 'static_pages#help'
   get '/signup',  to: 'users#new'
+  get '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   
   #get "static_pages/home"
   #get "static_pages/help"
