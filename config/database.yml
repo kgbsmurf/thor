@@ -54,7 +54,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: thor_platform_production
+  database: d6c5u418nlqktt
   pool: 5
-  username: postgres
-  password:
+  username: fkcoeuvxbelsop
+  password: F6b4vPR1IJ9DgvumLhjRbsFvpU
+
