@@ -13,7 +13,6 @@ class Company < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection 
   has_and_belongs_to_many :users
   
-  validates :name, presence: true, length: { maximum: 50 }, 
-                uniqueness: {case_sensitive: false}
+  validates :name, presence: true, length: { maximum: 50 }
   
 end
