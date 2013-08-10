@@ -8,6 +8,7 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 require 'spec_helper'
@@ -27,6 +28,9 @@ describe User do
   it {should respond_to (:password_confirmation)}
   it {should respond_to (:remember_token)}
   it {should respond_to (:authenticate)}
+  
+  # Test associations
+  it { should have_and_belong_to_many(:companies)}
   
   
   
@@ -73,7 +77,7 @@ describe User do
   end
   
   describe "email address with mixed case" do
-    let (:mixed_case_email) { "BubBa@aol.com" }
+    let (:mixed_case_email) { "BubBa1233@aol.com" }
     it "should be saved as all lower-case" do
       @user.email = mixed_case_email
       @user.save

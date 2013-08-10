@@ -1,6 +1,10 @@
 ThorPlatform::Application.routes.draw do
   
-  resources :users
+  
+  resources :users do
+    resources :companies
+  end
+  
   resources :sessions, only: [:new, :create, :destroy]
     
   root 'static_pages#home'

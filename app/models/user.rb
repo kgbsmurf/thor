@@ -8,9 +8,14 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 class User < ActiveRecord::Base
+  
+  has_and_belongs_to_many :companies
+  
+  
   include ActiveModel::ForbiddenAttributesProtection
   
   has_secure_password

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :signed_in_user,  only: [:edit, :update]
   before_filter :correct_user,    only: [:edit, :update]
   
-  def show
+  def show #one user
     @user = User.find(params[:id])
   end
   
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       # Successful Save
       sign_in @user
-      flash[:success] = "#{@user.name} Welcome to Thor"
+      flash[:success] = "#{@user.name} Welcome to Thor Platform!"
       
       redirect_to @user
     else

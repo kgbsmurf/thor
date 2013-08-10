@@ -48,6 +48,7 @@ group :development, :test do
   gem 'debugger'
   gem 'rspec-rails'
   gem 'capybara', '1.1.2'
+
   
   # Use Uglifier as compressor for JavaScript assets
   
@@ -55,8 +56,13 @@ end
 
 group :development do
   gem 'annotate'
+  gem "autotest-rails", "~> 4.1.2"
+
 end
 
 group :test do
   gem 'factory_girl_rails'
+  gem "shoulda", "~> 3.5.0"
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
