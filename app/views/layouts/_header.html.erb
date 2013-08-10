@@ -12,33 +12,11 @@
             <ul class="nav">
               <li><%= link_to "Home", root_path %></li>
               <li><%= link_to "Help", help_path %></li>
+              
               <% if signed_in? %>
-              
-              <li id="company-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Company <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                  <li><%= render 'layouts/company_menu' %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to "Create company", new_user_company_path(current_user) %></li>
-                </ul>
-              </li>
-              
-              
-              <li id="account-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Account <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                  <li><%= link_to "Profile", current_user %></li>
-                  <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                  <li class="divider"></li>
-                  <li>
-                    <%= link_to "Sign out", signout_path, method: "delete" %>
-                  </li>
-                </ul>
-              </li>
+                <%= render 'layouts/company_menu' %>
+                <%= render 'layouts/account_menu' %>
+
               <% else %>
               <li><%= link_to "Sign In", signin_path %></li>
               <% end %>

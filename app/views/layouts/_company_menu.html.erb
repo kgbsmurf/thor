@@ -1,3 +1,12 @@
-<% current_user.companies.each do |c| %>
-<li><%= link_to c.name, user_company_path(c, user_id: current_user.id) %></li>
-<% end %>
+<li id="company-menu" class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    Company <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+    <li><%= link_to "All Companies", '#' %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Create company", new_user_company_path(current_user) %></li>
+    <li class="divider"></li>
+    <li><%= render 'layouts/company_menu_list' %></li>
+  </ul>
+</li>
