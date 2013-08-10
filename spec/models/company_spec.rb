@@ -21,16 +21,19 @@ describe Company do
     before { @company = user.companies.build(name: "Dinamo") }
 
     subject { @company }
-  
-    describe "when company already exist for the user" do
-      before do
-          company_with_same_name = @company.dup
-          company_with_same_name.name = @company.name.upcase
-          company_with_same_name.save
-        end
 
-      it { should_not be_valid }
-    end
+#   ### Decided that its okay to have companies with same names.  
+#   ### IDs would be different
+#   
+#    describe "when company already exist for the user" do
+#      before do
+#          company_with_same_name = @company.dup
+#          company_with_same_name.name = @company.name.upcase
+#          company_with_same_name.save
+#        end
+#
+#      it { should_not be_valid }
+#    end
     
   end
 end

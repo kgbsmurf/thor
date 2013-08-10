@@ -2,5 +2,9 @@
 <div class="center hero-unit">
   <h1>Welcome to Thor Platform</h1>
   <p>This is an early prototype</p>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large bth-primary"  %>
+  <% if signed_in? %>
+    Welcome <%= current_user.name %>!
+  <% else %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-large bth-primary"  %>
+  <% end %>
 </div>

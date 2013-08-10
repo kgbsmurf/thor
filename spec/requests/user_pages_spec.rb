@@ -15,8 +15,15 @@ describe "User pages" do
     
     let(:user) { FactoryGirl.create(:user)}
     
-    before {visit user_path(user)}
+   
     
+    before do
+            visit edit_user_path(user)
+            fill_in "Email",  with: user.email
+            fill_in "Password", with: user.password
+            click_button "Sign in"
+          end
+     before {visit user_path(user)}
     it { should have_selector('h1',     text: user.name)}
     it { should have_selector('title',  text: user.name)}
   end
