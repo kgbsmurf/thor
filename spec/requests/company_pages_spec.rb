@@ -43,7 +43,7 @@ describe "Company Pages" do
       @company = user.companies.create!(name: "Dinamo")
       #@company = user.companies.first
       
-      visit user_company_path(@company, user_id: user.id)
+      visit company_path(@company, user_id: user.id)
     end
     it { should have_selector('title', text: "Dinamo") }
     it { should have_selector('li', text: "Dinamo") }

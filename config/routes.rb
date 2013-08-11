@@ -2,7 +2,9 @@ ThorPlatform::Application.routes.draw do
   
   
   resources :users do
-    resources :companies
+    resources :companies, shallow: true do 
+      resource :lbdpage
+    end
   end
   
   resources :sessions, only: [:new, :create, :destroy]
