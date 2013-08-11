@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
     
     if @company.save
       flash[:success] = "#{@company.name} created successfully."
-      redirect_to user_company_path(id: @company.id)
+      redirect_to company_path(id: @company.id)
     else
       render 'new'
     end
