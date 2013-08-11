@@ -10,4 +10,9 @@ FactoryGirl.define do
     name "Dinamo"
     user
   end
+  
+  factory :lbd_page do
+    name "Example LBD Listing"
+    description "TEst test test"
+  end
 end

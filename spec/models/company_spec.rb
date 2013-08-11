@@ -15,6 +15,8 @@ describe Company do
   it { should have_and_belong_to_many(:users) }
   it { should respond_to(:name) }
   
+  it { should have_one(:lbd_page) }
+  
   
   describe "with logged in user" do
     let(:user) { FactoryGirl.create(:user)}
