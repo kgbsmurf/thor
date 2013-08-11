@@ -1,0 +1,2 @@
+module LbdPagesHelper
+end
