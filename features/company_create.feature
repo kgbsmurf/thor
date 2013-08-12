@@ -13,3 +13,11 @@ Scenario: successfully create valid company
     And I click "Create company" button
     Then I should see "created successfully" message
     And I should see "Dinamo" heading
+
+Scenario: successfully create valid LBD Page
+    When I access company "Dinamo"
+    When I click on "Add LBD Page" link
+    And I enter "Example Dinamo LBD Page" in the "Name" box
+    And I click "Create LBD Page" button
+    Then I should see "created successfully" message
+    And I should see "Example Dinamo LBD Page" heading
