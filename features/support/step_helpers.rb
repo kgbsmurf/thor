@@ -1,27 +1,20 @@
-  def path_to(page_name)
-    case page_name
-
-    when /^Create company$/i then 
-      debugger
-      
-      user = FactoryGirl.create(:user)
-      new_user_company_path(user)
-    when /^the movies page$/ then '/movies'
-
-    # Add more mappings here.
-    # Here is an example that pulls values out of the Regexp:
-    #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
-
-    else
-      begin
-        page_name =~ /^the (.*) page$/
-        path_components = $1.split(/\s+/)
-        self.send(path_components.push('path').join('_').to_sym)
-      rescue NoMethodError, ArgumentError
-        raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
-          "Now, go and add a mapping in #{__FILE__}"
-      end
-    end
+def sign_in
+  visit root_path
+  
+  if has_link?("Sign In")
+    click_link "Sign up" 
+    fill_in "Name", with: "Test User"
+    fill_in "Email", with: "test@user.com"
+    fill_in "Password", with: "Password1"
+    fill_in "Confirmation", with: "Password1"
+    click_button "Create my account" 
   end
+    should_not have_link('Sign In')
+end
+
+def create_company
+  click_link "Create company"
+  fill_in "Name", with: "Dinamo"
+  click_button "Create company"
+  
+end

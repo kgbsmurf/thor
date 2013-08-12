@@ -48,6 +48,7 @@ group :development, :test do
   gem 'debugger'
   gem 'rspec-rails'
   gem 'capybara', '1.1.2'
+  #gem 'minitest-rails'
 
   
   # Use Uglifier as compressor for JavaScript assets

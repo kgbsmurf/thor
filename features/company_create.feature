@@ -8,8 +8,8 @@ Background: user logged in and registered
     When I login with valid user
 
 Scenario: successfully create valid company
-    When I am on "Create Company" page
-    And I enter "Dinamo" as a company name in the "Company name" box
-    And I click "Create Company" button
-    Then I should see "Company created successfully" message
-    And I should see "Dinamo" on page
+    When I click on "Create company" link
+    And I enter "Dinamo" in the "Name" box
+    And I click "Create company" button
+    Then I should see "created successfully" message
+    And I should see "Dinamo" heading

@@ -5,7 +5,12 @@
 # files.
 
 require 'cucumber/rails'
+require 'cucumber/rails/rspec'
+#require 'webrat/core/matchers'
 
+require 'minitest/spec'
+World(MiniTest::Assertions)
+MiniTest::Spec.new(nil)
 
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
