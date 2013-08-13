@@ -1,0 +1,17 @@
+Mon, 12 Aug 2013 19:26:39 -0400
+README.rdoc	Sun, 11 Aug 2013 16:21:55 -0400
+app/controllers/application_controller.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/controllers/companies_controller.rb	Sun, 11 Aug 2013 17:09:15 -0400
+app/controllers/lbd_pages_controller.rb	Mon, 12 Aug 2013 19:14:50 -0400
+app/controllers/sessions_controller.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/controllers/static_pages_controller.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/controllers/users_controller.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/helpers/application_helper.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/helpers/companies_helper.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/helpers/lbd_pages_helper.rb	Sun, 11 Aug 2013 18:14:12 -0400
+app/helpers/sessions_helper.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/helpers/static_pages_helper.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/helpers/users_helper.rb	Sun, 11 Aug 2013 16:21:55 -0400
+app/models/company.rb	Mon, 12 Aug 2013 19:26:34 -0400
+app/models/lbd_page.rb	Sun, 11 Aug 2013 18:41:38 -0400
+app/models/user.rb	Sun, 11 Aug 2013 16:21:55 -0400

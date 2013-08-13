@@ -3,7 +3,8 @@ ThorPlatform::Application.routes.draw do
   
   resources :users do
     resources :companies, shallow: true do 
-      resource :lbdpage
+      resource :lbd_page
+        #post '/lbd_page/new', to: 'lbd_pages#create'
     end
   end
   

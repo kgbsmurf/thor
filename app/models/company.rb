@@ -16,4 +16,16 @@ class Company < ActiveRecord::Base
   
   validates :name, presence: true, length: { maximum: 50 }
   
+  #Additional Methods
+  
+  ## Checks if LBD Page already exist. Returns <tt>false</tt> if doesnt - <tt>true</tt> if does
+  
+  def has_lbd_page?
+    if self.lbd_page == nil
+      false
+    else
+      true
+    end
+  end
+  
 end

@@ -5,7 +5,7 @@
       <section>
         <h1><%= @company.name  %></h1>
         <p>Company Id: <%= @company.id %></p>
-        
+        <%= link_to "Add LBD Page", new_company_lbd_page_path(@company) %>
       </section>
     </aside>
   </div>

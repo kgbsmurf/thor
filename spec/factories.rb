@@ -8,7 +8,7 @@ FactoryGirl.define do
   
   factory :company do
     name "Dinamo"
-    user
+    #user
   end
   
   factory :lbd_page do

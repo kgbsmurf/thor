@@ -4,9 +4,7 @@ end
 
 
 When(/^I click on "(.*?)" link$/) do |link_name|
-    visit root_path
     click_link link_name
-    should have_selector('h1', text: link_name)
 end
 
 When(/^I enter "(.*?)" in the "(.*?)" box$/) do |name, box|
@@ -31,4 +29,6 @@ end
 
 When(/^I access company "(.*?)"$/) do |company|
   create_company
+  should have_selector("h1", text: company)
+  
 end
