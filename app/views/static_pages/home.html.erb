@@ -2,6 +2,9 @@
 <div class="center hero-unit">
   <h1>Welcome to Thor Platform</h1>
   <p>This is an early prototype</p>
+  <p>You can now see the list of all 
+    <%= link_to "LBD pages", :all %>
+  </p>
   <% if signed_in? %>
     Welcome <%= current_user.name %>!
   <% else %>

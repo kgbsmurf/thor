@@ -10,12 +10,26 @@ ThorPlatform::Application.routes.draw do
   
   resources :sessions, only: [:new, :create, :destroy]
     
-  root 'static_pages#home'
+  get '/all',     to: 'lbd_pages#all'
+  
+  
   get '/help',    to: 'static_pages#help'
   get '/signup',  to: 'users#new'
   get '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   
+  # Trying to get luxurybuilderdirectory path to work:
+  
+
+
+#   get '/', to: 'lbd_pages#all' # , :constraints => Domain
+#
+#constraints(Subdomain) do 
+#  get '/', to: 'static_pages#home'
+#end
+  root 'static_pages#home'
+  
+
   #get "static_pages/home"
   #get "static_pages/help"
   # The priority is based upon order of creation: first created -> highest priority.

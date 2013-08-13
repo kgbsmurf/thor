@@ -35,5 +35,25 @@ describe LbdPagesController do
         response.should be_success
       end
     end
+    
+    describe 'should bring all lbd pages' do
+      before { lbd_page = FactoryGirl.create(:lbd_page) }
+      specify "when going to /all" do
+        get :all
+        response.should be_success
+      end
+    end
+    
+    describe '/all link should be accessible' do
+      specify "when going to *.luxurybuilderdirectory.com/" do
+        request.env['HTTP_HOST'] = 'preview.luxurybuilderdirectory.com'
+        visit '/'
+#        debugger
+         
+        response.should render_template('lbd_pages/all')
+      end
+      
+    end
+    
   end
 end

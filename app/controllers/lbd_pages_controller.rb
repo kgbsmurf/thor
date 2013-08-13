@@ -68,6 +68,9 @@ class LbdPagesController < ApplicationController
     
   end
   
+  def all
+    @lbdpages = LbdPage.all
+  end
   
   #Additional Methods
   

@@ -1,0 +1,12 @@
+<% provide(:title, 'All LBD Pages') %>
+
+<h1>Listing of all LBD Pages</h1>
+<% @lbdpages.each do |rec| %>
+<div class="row">
+    <div class="span6 offset3">Name: <%= rec.name %>  </div>
+    <div class="span6 offset3">Description: <%= rec.description %>  </div>
+    <div class="span6 offset3">Company it belongs to: <%= rec.company.name %>  </div>
+    <div class="span6 offset3">Number of Users that company belongs to: <%= rec.company.users.count %>  </div>
+</div>
+<hr>
+<% end %>

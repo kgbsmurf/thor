@@ -10,6 +10,7 @@ describe LbdPage do
     it { should respond_to(:destroy) }
     it { should respond_to(:update) }
     it { should respond_to(:hello) }
+    it { should respond_to(:all) }
     
     describe "associations:" do
       it { should belong_to(:company) }
