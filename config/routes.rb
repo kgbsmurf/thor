@@ -1,7 +1,22 @@
 ThorPlatform::Application.routes.draw do
-  
 require 'domains'
+
+  constraints(LuxuryBuilder) do 
+    get'/', to: 'lbd_pages#all' 
+  end
+
+  constraints(DefaultDomain) do 
+    get '/', to: 'static_pages#home'
+    root 'static_pages#home'
+  end
+
+  get '/all',     to: 'lbd_pages#all'
+  get '/help',    to: 'static_pages#help'
+  get '/signup',  to: 'users#new'
+  get '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users do
     resources :companies, shallow: true do 
       resource :lbd_page
@@ -9,29 +24,14 @@ require 'domains'
     end
   end
   
-  resources :sessions, only: [:new, :create, :destroy]
     
-  get '/all',     to: 'lbd_pages#all'
-  
-  
-  get '/help',    to: 'static_pages#help'
-  get '/signup',  to: 'users#new'
-  get '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+
   
   # Trying to get luxurybuilderdirectory path to work:
   
 
 
-constraints(LuxuryBuilder) do 
-   get'/', to: 'lbd_pages#all' 
-end
 
-constraints(DefaultDomain) do 
-   
-  get '/', to: 'static_pages#home'
-#  root 'static_pages#home'
-end
   
 
   #get "static_pages/home"

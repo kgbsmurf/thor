@@ -9,8 +9,9 @@ class LuxuryBuilder
 end
 
 class DefaultDomain
-  pp "Using default domain"
+  
   def self.matches?(request)
+    pp "Using default domain"
     request.domain != "frptest.com"
     
   end
