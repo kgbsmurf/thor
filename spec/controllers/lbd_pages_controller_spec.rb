@@ -47,7 +47,6 @@ describe LbdPagesController do
     describe '/all link should be accessible' do
       specify "when going to *.luxurybuilderdirectory.com/" do
         request.host = 'frptest.com'
-         pp request.domain
          assert_routing "http://hk.frptest.com/", { :controller => "lbd_pages", :action => "all" }
 #        response.should render_template('lbd_pages/all')
       end
