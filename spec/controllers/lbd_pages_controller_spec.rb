@@ -46,23 +46,13 @@ describe LbdPagesController do
     
     describe '/all link should be accessible' do
       specify "when going to *.luxurybuilderdirectory.com/" do
-        request.env['HTTP_HOST'] = 'preview.luxurybuilderdirectory.com'
-        visit '/'
-#        debugger
+        request.host = 'hk.frptest.com'
          pp request.domain
-        response.should render_template('lbd_pages/all')
+         assert_routing "http://hk.frpt2est.com/", { :controller => "lbd_pages", :action => "new" }
+#        response.should render_template('lbd_pages/all')
       end
       
     end
-    
-    describe '/all link should be accessible' do
-      specify "when going to *default domain/" do
-        visit '/'
-#        debugger
-         pp request.domain
-        response.should render_template('static_pages/home')
-      end
-      
-    end
+
   end
 end

@@ -24,13 +24,13 @@ require 'domains'
 
 
 constraints(LuxuryBuilder) do 
-   get '/', to: 'lbd_pages#all' # , :constraints => Domain
+   get'/', to: 'lbd_pages#all' 
 end
 
 constraints(DefaultDomain) do 
    
   get '/', to: 'static_pages#home'
-  root 'static_pages#home'
+#  root 'static_pages#home'
 end
   
 
