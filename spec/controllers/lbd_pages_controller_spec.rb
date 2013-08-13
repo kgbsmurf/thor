@@ -49,11 +49,20 @@ describe LbdPagesController do
         request.env['HTTP_HOST'] = 'preview.luxurybuilderdirectory.com'
         visit '/'
 #        debugger
-         
+         pp request.domain
         response.should render_template('lbd_pages/all')
       end
       
     end
     
+    describe '/all link should be accessible' do
+      specify "when going to *default domain/" do
+        visit '/'
+#        debugger
+         pp request.domain
+        response.should render_template('static_pages/home')
+      end
+      
+    end
   end
 end
