@@ -1,5 +1,6 @@
 ThorPlatform::Application.routes.draw do
   
+require 'domains'
   
   resources :users do
     resources :companies, shallow: true do 
@@ -22,12 +23,15 @@ ThorPlatform::Application.routes.draw do
   
 
 
-#   get '/', to: 'lbd_pages#all' # , :constraints => Domain
-#
-#constraints(Subdomain) do 
-#  get '/', to: 'static_pages#home'
-#end
+constraints(LuxuryBuilder) do 
+   get '/', to: 'lbd_pages#all' # , :constraints => Domain
+end
+
+constraints(DefaultDomain) do 
+   
+  get '/', to: 'static_pages#home'
   root 'static_pages#home'
+end
   
 
   #get "static_pages/home"
